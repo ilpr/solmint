@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+.swv-dropdown-list {
+    @apply font-mono bg-grey text-white w-full rounded-none;
+}
+
+.swv-dropdown-list-item {
+    @apply rounded-none hover:bg-grey hover:text-cyan !important;
+}
+
+.swv-button {
+    @apply bg-black font-mono rounded-none text-pink border-solid border-pink border-2 hover:border-cyan hover:text-cyan !important;
+}
+
+.swv-modal-overlay {
+    @apply bg-black opacity-60;
+}
+
+.swv-modal-wrapper {
+    @apply p-5 bg-black text-white rounded-none border-solid border-2 border-cyan;
+}
+
+.swv-modal-wrapper .swv-button {
+    @apply text-white;
+}
+
+.swv-modal-button-close {
+    @apply bg-grey;
+}
