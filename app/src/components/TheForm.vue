@@ -16,7 +16,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="receiver's address"
       >
-      <span v-if="v$Main.receiver.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.receiver.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.receiver.$errors[0].$message }}
       </span>
     </div>
@@ -32,7 +32,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. Ape #1"
       >
-      <span v-if="v$Main.name.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.name.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.name.$errors[0].$message }}
       </span>
     </div>
@@ -48,7 +48,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. APE"
       >
-      <span v-if="v$Main.symbol.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.symbol.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.symbol.$errors[0].$message }}
       </span>
     </div>
@@ -78,7 +78,7 @@
           class="w-full text-grey focus:ring-cyan focus:border-cyan block"
           placeholder="a link to metadata file"
         >
-        <span v-if="v$Main.uri.$error" class="text-cyan block mt-2">
+        <span v-if="v$Main.uri.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.uri.$errors[0].$message }}
         </span>
       </div>
@@ -121,7 +121,7 @@
         class="w-full text-gray-500 focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. 500"
       >
-      <span v-if="v$Main.sellerFee.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.sellerFee.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.sellerFee.$errors[0].$message }}
       </span>
     </div>
@@ -172,7 +172,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block mb-2"
         placeholder="creator's address"
       >
-      <span v-if="v$Creator.address.$error" class="text-cyan block my-2">
+      <span v-if="v$Creator.address.$error" class="text-sm text-cyan block my-2">
         {{ v$Creator.address.$errors[0].$message }}
       </span>
 
@@ -187,7 +187,7 @@
         class="w-full text-gray-500 focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. 50"
       >
-      <span v-if="v$Creator.share.$error" class="text-cyan block my-2">
+      <span v-if="v$Creator.share.$error" class="text-sm text-cyan block my-2">
         {{ v$Creator.share.$errors[0].$message }}
       </span>
 
@@ -204,10 +204,7 @@
       <div v-if="!mainState.creators.length == 0">
         <div class="container w-full text-white my-6 bg-black">
           Creators:
-          <div v-for="(creator, index) in mainState.creators"
-            :key="creator"
-          >
-
+          <div v-for="(creator, index) in mainState.creators" :key="creator">
             <div class="container w-full text-gray-400 mt-3 px-3 bg-black border-l-solid border-l-2 border-l-cyan">
               Address:
               <p class="truncate text-white my-1"> {{ creator.address }} </p>
@@ -227,14 +224,14 @@
     </div>
 
     <!-- Notes. -->
-    <p class="mb-7 text-cyan">
+    <p class="mt-3 mb-7 text-cyan">
       *Cost of creating one NFT: ~0.012 SOL<br>
       *This app does not charge fees.
     </p>
 
     <!-- Submit button. -->
     <button
-      class="flex justify-center w-full mt-3 mb-7 lg:mb-10 p-3 font-bold text-lg lg:text-xl text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
+      class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold text-lg lg:text-xl text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
       :disabled="isMinting || !connected"
       :class="isMinting || !connected ? 'cursor-not-allowed' : 'cursor-allowed'"
       @click="mintNft">
@@ -386,17 +383,16 @@ export default {
           return;
         }
 
-        const creator = {
+        this.mainState.creators.push({
           address,
           share: parseInt(share, 10)
-        };
-        this.mainState.creators.push(creator);
+        });
 
         this.creatorState.address = "";
         this.creatorState.share = 0;
 
       } else {
-        alert("Cannot add a creator due to invalid data")
+        alert("Cannot add a creator due to invalid data");
       }
     },
     deleteCreator(index) {
