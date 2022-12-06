@@ -14,7 +14,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. Ape #1"
       />
-      <span v-if="v$Main.name.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.name.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.name.$errors[0].$message }}
       </span>
     </div>
@@ -32,7 +32,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. APE"
       />
-      <span v-if="v$Main.symbol.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.symbol.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.symbol.$errors[0].$message }}
       </span>
     </div>
@@ -50,7 +50,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. AI-generated pixel art on Solana."
       />
-      <span v-if="v$Main.description.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.description.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.description.$errors[0].$message }}
       </span>
     </div>
@@ -68,7 +68,7 @@
         accept=".jpg, .png, .svg"
         class="text-gray-400"
       />
-      <span v-if="v$Main.imageFile.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.imageFile.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.imageFile.$errors[0].$message }}
       </span>
     </div>
@@ -93,7 +93,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block mb-2"
         placeholder="e.g. hat"
       >
-      <span v-if="v$Trait.traitType.$error" class="text-cyan block my-2">
+      <span v-if="v$Trait.traitType.$error" class="text-sm text-cyan block my-2">
         {{ v$Trait.traitType.$errors[0].$message }}
       </span>
 
@@ -110,7 +110,7 @@
         class="w-full text-gray-500 focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. beanie"
       >
-      <span v-if="v$Trait.traitValue.$error" class="text-cyan block my-2">
+      <span v-if="v$Trait.traitValue.$error" class="text-sm text-cyan block my-2">
         {{ v$Trait.traitValue.$errors[0].$message }}
       </span>
 
@@ -156,7 +156,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. your art website"
       />
-      <span v-if="v$Main.url.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.url.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.url.$errors[0].$message }}
       </span>
     </div>
