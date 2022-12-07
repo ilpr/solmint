@@ -1,24 +1,23 @@
-# app
+# Solmint dapp
 
-## Project setup
-```
-npm install
-```
+A dapp for minting individual NFTs on Solana.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Setup
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Run `npm install`.
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Serve
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The command depends on which Solana cluster you want to use.
+
+- localhost: `npm run serve`
+- devnet: `npm run serve:devnet`
+- mainnet: `npm run serve:mainnet`
+
+## Build
+
+As with `serve`:
+
+- localhost: `npm run build`
+- devnet: `npm run build:devnet`
+- mainnet: `npm run build:mainnet`
