@@ -66,7 +66,7 @@
         type="file"
         @change="addImage"
         accept=".jpg, .png, .svg"
-        class="text-gray-400"
+        class="text-gray-400 file:p-2 file:text-pink file:bg-black file:border-2 file:border-pink file:border-solid file:hover:border-cyan file:hover:text-cyan cursor-pointer file:cursor-pointer"
       />
       <span v-if="v$Main.imageFile.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.imageFile.$errors[0].$message }}
