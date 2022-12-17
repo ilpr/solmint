@@ -12,7 +12,7 @@
 }
 
 .swv-button {
-    @apply bg-black font-mono rounded-none text-pink border-solid border-pink border-2 hover:border-cyan hover:text-cyan !important;
+    @apply bg-black font-mono rounded-none text-sm text-pink border-solid border-pink border-2 hover:border-cyan hover:text-cyan !important;
 }
 
 .swv-modal-overlay {

@@ -1,13 +1,13 @@
 <template>
-  <form class="flex flex-col justify-center px-5 md:px-10 lg:px-24 xl:px-40 bg-black">
+  <form class="flex flex-col justify-center px-5 md:px-10 lg:px-24 xl:px-40 bg-black text-sm">
 
-    <p v-if="!connected" class="lg:text-lg mb-6 text-center text-cyan">
+    <p v-if="!connected" class="lg:text-base mb-6 text-center text-cyan">
       Connect wallet to create an NFT...
     </p>
 
     <!-- Receiver field. -->
     <div class="mb-7">
-      <label for="receiver" class="flex block text-white mb-2">Receiver*
+      <label for="receiver" class="flex block text-base text-white mb-2">Receiver*
       </label>
       <input
         type="text"
@@ -23,7 +23,7 @@
 
     <!-- Name field. -->
     <div class="mb-7">
-      <label for="name" class="flex block text-white mb-2">Name*
+      <label for="name" class="flex block text-base text-white mb-2">Name*
       </label>
       <input
         type="text"
@@ -39,7 +39,7 @@
 
     <!-- Symbol field. -->
     <div class="mb-7">
-      <label for="symbol" class="flex block text-white mb-2">Symbol*
+      <label for="symbol" class="flex block text-base text-white mb-2">Symbol*
       </label>
       <input
         type="text"
@@ -55,7 +55,7 @@
 
     <!-- Uri field. -->
     <div class="mb-7 text-white">
-      <label for="uri" class="flex block text-white mb-2">Metadata file*
+      <label for="uri" class="flex block text-base text-white mb-2">Metadata file*
         <TheTooltip text="A link to the JSON metadata file stored, for example, on Arweave."/>
       </label>
 
@@ -67,7 +67,7 @@
           v-model="userHasUri"
           class="rounded-none text-pink focus:ring-cyan mr-2"
         />
-        <label for="is-uri" class="text-gray-400">I have a file</label>
+        <label for="is-uri" class="text-base text-gray-400">I have a file</label>
       </div>
 
       <div v-if="userHasUri" class="block mb-3">
@@ -111,7 +111,7 @@
 
     <!-- Seller fee field. -->
     <div class="mb-7">
-      <label for="seller-fee" class="flex block text-white mb-2">Seller fee*
+      <label for="seller-fee" class="flex block text-base text-white mb-2">Royalties*
         <TheTooltip text="A royalty that is paid to creator(s) in the event of a sale, in basis points. For example, 550 = 5.5%."/>
       </label>
       <input
@@ -128,7 +128,7 @@
 
     <!-- Is mutable field. -->
     <div class="mb-7">
-      <label for="is-mutable" class="flex block text-white mb-2">Is mutable
+      <label for="is-mutable" class="flex block text-base text-white mb-2">Is mutable
         <TheTooltip text="If chosen, the NFT can be updated after creation."/>
       </label>
       <input
@@ -141,7 +141,7 @@
 
     <!-- Collection field. -->
     <div class="mb-7">
-      <label for="nft-type" class="flex block text-white mb-2">
+      <label for="nft-type" class="flex block text-base text-white mb-2">
         Collection
         <TheTooltip text="Optional collection. You must be the collection authority to verifiably set the NFT as part of it."/>
       </label>
@@ -152,19 +152,16 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="collection address"
       >
-      <p v-if="mainState.collection !== ''" class="mt-2 text-gray-400">
-        Note: there will be 2 transactions if collection is added.
-      </p>
     </div>
 
     <!-- Add a creator field. -->
     <div class="mb-7">
-      <label class="flex block text-white mb-2">Add a creator
+      <label class="flex block text-base text-white mb-2">Add a creator
         <TheTooltip text="Creator(s) of the NFt. Maximum is 5. Note that only a signer (you) can be added as a 'verified' creator."/>
       </label>
 
       <!-- Address field. -->
-      <label class="block text-gray-400 mb-2">Address*</label>
+      <label class="block text-base text-gray-400 mb-2">Address*</label>
       <input
         type="text"
         id="address"
@@ -177,7 +174,7 @@
       </span>
 
       <!-- Share field. -->
-      <label class="flex block text-gray-400 mb-2">Share*
+      <label class="flex block text-base text-gray-400 mb-2">Share*
         <TheTooltip text="Share of the royalties to the creator, in percentages. For example, 50 = 50%. Note that the shares must add up to 100."/>
       </label>
       <input
@@ -193,7 +190,7 @@
 
       <!-- 'Add' button. -->
       <button
-        class="mt-4 p-2 text-pink border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
+        class="mt-4 p-2 text-base text-pink border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
         :disabled="!connected"
         :class="!connected ? 'cursor-not-allowed' : 'cursor-allowed'"
         @click="addCreator(creatorState.address, creatorState.share)">
@@ -204,10 +201,7 @@
       <div v-if="!mainState.creators.length == 0">
         <div class="container w-full text-white my-6 bg-black">
           Creators:
-          <div v-for="(creator, index) in mainState.creators"
-            :key="creator"
-          >
-
+          <div v-for="(creator, index) in mainState.creators" :key="creator">
             <div class="container w-full text-gray-400 mt-3 px-3 bg-black border-l-solid border-l-2 border-l-cyan">
               Address:
               <p class="truncate text-white my-1"> {{ creator.address }} </p>
@@ -227,14 +221,14 @@
     </div>
 
     <!-- Notes. -->
-    <p class="mb-7 text-cyan">
+    <p class="mt-3 mb-7 text-cyan">
       *Cost of creating one NFT: ~0.012 SOL<br>
       *This app does not charge fees.
     </p>
 
     <!-- Submit button. -->
     <button
-      class="flex justify-center w-full mt-3 mb-7 lg:mb-10 p-3 font-bold text-lg lg:text-xl text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
+      class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold lg:text-lg text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
       :disabled="isMinting || !connected"
       :class="isMinting || !connected ? 'cursor-not-allowed' : 'cursor-allowed'"
       @click="mintNft">
@@ -386,17 +380,16 @@ export default {
           return;
         }
 
-        const creator = {
+        this.mainState.creators.push({
           address,
           share: parseInt(share, 10)
-        };
-        this.mainState.creators.push(creator);
+        });
 
         this.creatorState.address = "";
         this.creatorState.share = 0;
 
       } else {
-        alert("Cannot add a creator due to invalid data")
+        alert("Cannot add a creator due to invalid data");
       }
     },
     deleteCreator(index) {

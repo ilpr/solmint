@@ -1,17 +1,32 @@
 <template>
     <header class="w-full border-b-2 border-white p-4 xl:p-5 bg-black flex justify-between items-center">
-      <div class="lg:ml-7">
-        <h1 class="font-['Audiowide'] text-3xl lg:text-4xl text-white cursor-pointer"
-          @click="reloadPage">
-          {{ title }}
-        </h1>
-        <h2 class="text-lg lg:text-xl text-gray-400">
-          {{ subtitle }}
-        </h2>
+      
+      <div class="flex items-center space-x-2">
+
+        <!-- Logo. -->
+        <img
+          src=".././assets/logo.png"
+          width="70"
+          height="70"
+          class="cursor-pointer"
+          @click="goToHome"
+        >
+
+        <!-- Title & subtitle. -->
+        <div>
+          <h1 class="font-['Audiowide'] text-2xl lg:text-3xl text-white">
+            {{ title }}
+          </h1>
+          <h2 class="lg:text-lg text-gray-400">
+            {{ subtitle }}
+          </h2>
+        </div>
+
       </div>
-      <div class="lg:mr-7">
-        <wallet-multi-button></wallet-multi-button>
-      </div>
+
+      <!-- Wallet button. -->
+      <wallet-multi-button></wallet-multi-button>
+
     </header>
 </template>
 
@@ -28,8 +43,12 @@ export default {
     WalletMultiButton
   },
   methods: {
-    reloadPage() {
-      window.location.reload();
+    async goToHome() {
+      if (this.$route.name === 'Home') {
+        await this.$router.go(0);
+      } else {
+        await this.$router.push({ name: 'Home' });
+      }
     }
   }
 }

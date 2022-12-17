@@ -12,7 +12,8 @@ export const uploadMetadata = async(
   symbol,
   description,
   imageFile,
-  externalUrl
+  externalUrl,
+  traits
 ) => {
 
   const { connection } = useWorkspace();
@@ -30,7 +31,11 @@ export const uploadMetadata = async(
       symbol,
       description,
       image: await toMetaplexFileFromBrowser(imageFile),
-      external_url: externalUrl
+      external_url: externalUrl,
+      attributes: traits,
+      properties: {
+        category: "image"
+      }
     });
 
     return { uri }

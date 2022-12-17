@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div class="text-sm">
     <span class="ml-2 group relative inline-block">
+
+      <!-- Icon. -->
       <i class="fa-regular fa-circle-question text-pink"/>
-      <span class="absolute text-center text-sm lg:text-base text-gray-300 hidden group-hover:flex
+
+      <!-- Text box. -->
+      <span class="absolute text-center lg:text-base text-gray-300 hidden group-hover:flex
       -top-2 -right-3 translate-x-full w-64
       px-2 py-1 bg-grey before:content-['']
       before:absolute before:top-5 before:right-[100%] before:-translate-y-1/2
@@ -10,6 +14,7 @@
       before:border-r-grey">
         {{ text }}
       </span>
+
     </span>
   </div>
 </template>
