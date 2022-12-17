@@ -145,13 +145,21 @@
 
     <!-- Url field. -->
     <div class="mb-10">
+<<<<<<< HEAD
       <label for="external-link" class="flex block mb-2">
+=======
+      <label for="url" class="flex block mb-2">
+>>>>>>> f48cdf115ea00cbdf7108a48c8c5f0c9ec9291b2
         External link
         <TheTooltip text="Optional link pointing to a website defining the NFT."/>
       </label>
       <input
         type="text"
+<<<<<<< HEAD
         id="external-link"
+=======
+        id="url"
+>>>>>>> f48cdf115ea00cbdf7108a48c8c5f0c9ec9291b2
         v-model="mainState.url"
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. your art website"

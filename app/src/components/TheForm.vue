@@ -16,7 +16,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="receiver's address"
       >
-      <span v-if="v$Main.receiver.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.receiver.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.receiver.$errors[0].$message }}
       </span>
     </div>
@@ -32,7 +32,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. Ape #1"
       >
-      <span v-if="v$Main.name.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.name.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.name.$errors[0].$message }}
       </span>
     </div>
@@ -48,7 +48,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. APE"
       >
-      <span v-if="v$Main.symbol.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.symbol.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.symbol.$errors[0].$message }}
       </span>
     </div>
@@ -78,7 +78,7 @@
           class="w-full text-grey focus:ring-cyan focus:border-cyan block"
           placeholder="a link to metadata file"
         >
-        <span v-if="v$Main.uri.$error" class="text-cyan block mt-2">
+        <span v-if="v$Main.uri.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.uri.$errors[0].$message }}
         </span>
       </div>
@@ -121,7 +121,7 @@
         class="w-full text-gray-500 focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. 500"
       >
-      <span v-if="v$Main.sellerFee.$error" class="text-cyan block mt-2">
+      <span v-if="v$Main.sellerFee.$error" class="text-sm text-cyan block mt-2">
         {{ v$Main.sellerFee.$errors[0].$message }}
       </span>
     </div>
@@ -169,7 +169,7 @@
         class="w-full text-grey focus:ring-cyan focus:border-cyan block mb-2"
         placeholder="creator's address"
       >
-      <span v-if="v$Creator.address.$error" class="text-cyan block my-2">
+      <span v-if="v$Creator.address.$error" class="text-sm text-cyan block my-2">
         {{ v$Creator.address.$errors[0].$message }}
       </span>
 
@@ -184,7 +184,7 @@
         class="w-full text-gray-500 focus:ring-cyan focus:border-cyan block"
         placeholder="e.g. 50"
       >
-      <span v-if="v$Creator.share.$error" class="text-cyan block my-2">
+      <span v-if="v$Creator.share.$error" class="text-sm text-cyan block my-2">
         {{ v$Creator.share.$errors[0].$message }}
       </span>
 
@@ -228,7 +228,11 @@
 
     <!-- Submit button. -->
     <button
+<<<<<<< HEAD
       class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold lg:text-lg text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
+=======
+      class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold text-lg lg:text-xl text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
+>>>>>>> f48cdf115ea00cbdf7108a48c8c5f0c9ec9291b2
       :disabled="isMinting || !connected"
       :class="isMinting || !connected ? 'cursor-not-allowed' : 'cursor-allowed'"
       @click="mintNft">
