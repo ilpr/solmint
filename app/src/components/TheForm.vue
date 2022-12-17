@@ -228,11 +228,7 @@
 
     <!-- Submit button. -->
     <button
-<<<<<<< HEAD
       class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold lg:text-lg text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
-=======
-      class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold text-lg lg:text-xl text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
->>>>>>> f48cdf115ea00cbdf7108a48c8c5f0c9ec9291b2
       :disabled="isMinting || !connected"
       :class="isMinting || !connected ? 'cursor-not-allowed' : 'cursor-allowed'"
       @click="mintNft">
