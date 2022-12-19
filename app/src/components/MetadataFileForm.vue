@@ -119,7 +119,7 @@
         class="mt-4 p-2 text-pink border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
         :disabled="!connected"
         :class="!connected ? 'cursor-not-allowed' : 'cursor-allowed'"
-        @click="addTrait(traitState.traitType, traitState.traitValue)">
+        @click.prevent="addTrait(traitState.traitType, traitState.traitValue)">
         Add
       </button>
 
@@ -135,7 +135,7 @@
             <!-- 'Delete' button. -->
             <button
               class="my-2 p-2 bg-black text-pink border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
-              @click="deleteTrait(index)">
+              @click.prevent="deleteTrait(index)">
               Delete
             </button>
           </div>
@@ -167,7 +167,7 @@
         class="flex justify-center mb-1 w-44 p-2 text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
         :disabled="!connected"
         :class="!connected ? 'cursor-not-allowed' : 'cursor-allowed'"
-        @click="upload"  
+        @click.prevent="upload"  
       >
         <span v-if="isCreating" class="flex text-cyan">
           <svg
