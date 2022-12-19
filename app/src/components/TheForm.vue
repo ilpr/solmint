@@ -193,7 +193,7 @@
         class="mt-4 p-2 text-base text-pink border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
         :disabled="!connected"
         :class="!connected ? 'cursor-not-allowed' : 'cursor-allowed'"
-        @click="addCreator(creatorState.address, creatorState.share)">
+        @click.prevent="addCreator(creatorState.address, creatorState.share)">
         Add
       </button>
 
@@ -211,7 +211,7 @@
               <!-- 'Delete' button. -->
               <button
                 class="mt-2 p-2 bg-black text-pink border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
-                @click="deleteCreator(index)">
+                @click.prevent="deleteCreator(index)">
                 Delete
               </button>
             </div>
@@ -231,7 +231,7 @@
       class="flex justify-center w-full mb-7 lg:mb-10 p-3 font-bold lg:text-lg text-pink bg-black border-solid border-2 border-pink hover:border-cyan hover:text-cyan"
       :disabled="isMinting || !connected"
       :class="isMinting || !connected ? 'cursor-not-allowed' : 'cursor-allowed'"
-      @click="mintNft">
+      @click.prevent="mintNft">
       <span v-if="isMinting" class="flex text-cyan">
         <svg
           class="mr-3 fill-cyan w-5 h-5 animate-spin"
